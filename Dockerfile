@@ -82,22 +82,7 @@ RUN echo "Installing sdk tools ${ANDROID_SDK_TOOLS_VERSION}" && \
         "platform-tools" > /dev/null && \
     echo "Installing build tools " && \
     yes | "$ANDROID_HOME"/tools/bin/sdkmanager \
-        "build-tools;28.0.3" > /dev/null && \
-    echo "Installing build tools " && \
-    yes | "$ANDROID_HOME"/tools/bin/sdkmanager \
-        "build-tools;23.0.3" > /dev/null && \
-    echo "Installing extras " && \
-    yes | "$ANDROID_HOME"/tools/bin/sdkmanager \
-        "extras;android;m2repository" \
-        "extras;google;m2repository" > /dev/null && \
-    echo "Installing play services " && \
-    yes | "$ANDROID_HOME"/tools/bin/sdkmanager \
-        "extras;google;google_play_services" \
-        "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2" \
-        "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.1" > /dev/null && \
-    echo "Installing Google APIs" && \
-    yes | "$ANDROID_HOME"/tools/bin/sdkmanager \
-        "add-ons;addon-google_apis-google-24" > /dev/null
+        "build-tools;28.0.3" > /dev/null
 
 # Copy sdk license agreement files.
 RUN mkdir -p $ANDROID_HOME/licenses
